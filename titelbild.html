@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titelbild – Dialysezentrum Heidelberg (6:1)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .instructions {
+            max-width: 1200px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .instructions h2 {
+            font-size: 18px;
+            color: #0d4f4f;
+            margin-bottom: 8px;
+        }
+
+        .instructions code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        /* === BANNER === */
+        .banner {
+            width: 1200px;
+            height: 200px;
+            background: linear-gradient(135deg, #0a3d3d 0%, #0d4f4f 20%, #1a7a7a 50%, #22918f 75%, #2ea8a8 100%);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+        }
+
+        /* Decorative circles */
+        .banner .deco-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.04);
+        }
+
+        .banner .deco-circle.c1 {
+            width: 300px;
+            height: 300px;
+            top: -120px;
+            right: -60px;
+        }
+
+        .banner .deco-circle.c2 {
+            width: 200px;
+            height: 200px;
+            bottom: -80px;
+            left: 100px;
+        }
+
+        .banner .deco-circle.c3 {
+            width: 120px;
+            height: 120px;
+            top: 20px;
+            left: 400px;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .banner .deco-circle.c4 {
+            width: 80px;
+            height: 80px;
+            bottom: 10px;
+            right: 300px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* Subtle pattern overlay */
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 60px,
+                rgba(255,255,255,0.015) 60px,
+                rgba(255,255,255,0.015) 61px
+            );
+            z-index: 1;
+        }
+
+        /* Left accent bar */
+        .banner .accent-bar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: linear-gradient(180deg, #a8e6cf, #2ea8a8, #0d4f4f);
+            z-index: 3;
+        }
+
+        /* Content */
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0 50px 0 40px;
+        }
+
+        .banner-logo {
+            flex-shrink: 0;
+            margin-right: 36px;
+        }
+
+        .banner-logo img {
+            height: 80px;
+            width: auto;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+        }
+
+        .banner-divider {
+            width: 2px;
+            height: 100px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 2px;
+            flex-shrink: 0;
+            margin-right: 36px;
+        }
+
+        .banner-text {
+            color: #fff;
+            flex: 1;
+        }
+
+        .banner-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 6px;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.15);
+        }
+
+        .banner-text .subtitle {
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+
+        .banner-text .tagline {
+            font-size: 16px;
+            font-weight: 600;
+            color: #a8e6cf;
+            letter-spacing: 0.5px;
+        }
+
+        .banner-right {
+            flex-shrink: 0;
+            text-align: right;
+            color: #fff;
+            margin-left: 30px;
+        }
+
+        .banner-right .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border: 1.5px solid rgba(255,255,255,0.4);
+            border-radius: 24px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .banner-right .location {
+            font-size: 12px;
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+
+        /* Bottom accent line */
+        .banner .bottom-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #a8e6cf, #2ea8a8, #1a7a7a, #0d4f4f);
+            z-index: 3;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .instructions { display: none; }
+            .banner { box-shadow: none; border-radius: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="instructions">
+        <h2>📸 Titelbild für Arbeitsagentur (6:1 Format)</h2>
+        <p>
+            Dieses Banner hat das Seitenverhältnis <strong>6:1</strong> (1200×200 Pixel) – genau wie von der Arbeitsagentur gefordert.<br>
+            <strong>So speichern Sie es:</strong> Drücken Sie <code>Win + Shift + S</code>, wählen Sie den Bereich des Banners aus, 
+            und speichern Sie den Screenshot. Dann laden Sie das Bild im Formular als Titelbild hoch.
+        </p>
+    </div>
+
+    <div class="banner">
+        <div class="accent-bar"></div>
+        <div class="deco-circle c1"></div>
+        <div class="deco-circle c2"></div>
+        <div class="deco-circle c3"></div>
+        <div class="deco-circle c4"></div>
+
+        <div class="banner-content">
+            <div class="banner-logo">
+                <img src="https://www.dialyse-heidelberg.de/wp-content/uploads/2018/09/logo-hell.png" alt="Logo">
+            </div>
+            <div class="banner-divider"></div>
+            <div class="banner-text">
+                <h1>Dialysezentrum Heidelberg</h1>
+                <div class="subtitle">Seit 1971 · Die älteste Dialysepraxis Heidelbergs</div>
+                <div class="tagline">Wir suchen engagierte Pflegekräfte & MFA für unser Team</div>
+            </div>
+            <div class="banner-right">
+                <div class="badge">Jetzt bewerben</div>
+                <div class="location">Bergheimer Str. 59/61<br>69115 Heidelberg</div>
+            </div>
+        </div>
+
+        <div class="bottom-line"></div>
+    </div>
+
+</body>
+</html>

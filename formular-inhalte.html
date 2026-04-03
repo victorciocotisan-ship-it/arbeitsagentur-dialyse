@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbeitsagentur Formular – Dialysezentrum Heidelberg – Inhalte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f0f4f8;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0d4f4f 0%, #1a7a7a 50%, #22918f 100%);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.85;
+        }
+
+        .header .badge {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 18px;
+            border: 1.5px solid rgba(255,255,255,0.5);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+
+        .section {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            margin-bottom: 28px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #0d4f4f, #1a7a7a);
+            color: #fff;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-header .icon {
+            font-size: 24px;
+        }
+
+        .section-header h2 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .section-header .form-section-label {
+            margin-left: auto;
+            font-size: 11px;
+            background: rgba(255,255,255,0.2);
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .section-body {
+            padding: 24px;
+        }
+
+        .field {
+            margin-bottom: 22px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 18px;
+        }
+
+        .field:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .field-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #1a7a7a;
+            margin-bottom: 6px;
+        }
+
+        .field-hint {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .field-value {
+            background: #f8fafa;
+            border: 1.5px solid #d0e8e8;
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #2c2c2c;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .field-value:hover {
+            border-color: #1a7a7a;
+            box-shadow: 0 0 0 3px rgba(26,122,122,0.1);
+        }
+
+        .field-value::after {
+            content: '📋 Klicken zum Kopieren';
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            font-size: 10px;
+            color: #1a7a7a;
+            background: #e6f5f0;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .field-value:hover::after {
+            opacity: 1;
+        }
+
+        .field-value.copied {
+            border-color: #2ecc71;
+            background: #f0fff5;
+        }
+
+        .field-value.copied::after {
+            content: '✅ Kopiert!';
+            opacity: 1;
+            background: #2ecc71;
+            color: #fff;
+        }
+
+        .checkbox-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .checkbox-item {
+            background: #e6f5f0;
+            border: 1.5px solid #1a7a7a;
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #0d4f4f;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .checkbox-item .check {
+            color: #1a7a7a;
+            font-weight: 700;
+        }
+
+        .checkbox-item.custom {
+            background: #fff8e6;
+            border-color: #e6a817;
+            color: #8a6914;
+        }
+
+        .checkbox-item.custom .check {
+            color: #e6a817;
+        }
+
+        .info-box {
+            background: #fffbe6;
+            border: 1px solid #f0e0a0;
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 13px;
+            color: #8a6914;
+            margin-top: 12px;
+        }
+
+        .info-box strong {
+            color: #6b4f00;
+        }
+
+        .logo-preview {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .logo-preview .logo-card {
+            background: #f8fafa;
+            border: 1.5px solid #d0e8e8;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .logo-preview .logo-card.dark-bg {
+            background: linear-gradient(135deg, #0d4f4f, #1a7a7a);
+            border-color: #0d4f4f;
+        }
+
+        .logo-preview .logo-card img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+        }
+
+        .logo-preview .logo-card .label {
+            font-size: 11px;
+            margin-top: 8px;
+            font-weight: 600;
+            color: #888;
+        }
+
+        .logo-preview .logo-card.dark-bg .label {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #0d4f4f, #1a7a7a);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 12px;
+            transition: transform 0.1s;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.02);
+        }
+
+        .qr-section {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .qr-card {
+            background: #f8fafa;
+            border: 1.5px solid #d0e8e8;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .qr-card .qr-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #0d4f4f;
+            margin-bottom: 8px;
+        }
+
+        .qr-card .qr-emoji {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        .qr-card canvas, .qr-card img {
+            border-radius: 8px;
+        }
+
+        .char-count {
+            font-size: 11px;
+            color: #999;
+            text-align: right;
+            margin-top: 4px;
+        }
+
+        .char-count.warning {
+            color: #e74c3c;
+            font-weight: 700;
+        }
+
+        .toc {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            padding: 24px;
+            margin-bottom: 28px;
+        }
+
+        .toc h3 {
+            font-size: 16px;
+            color: #0d4f4f;
+            margin-bottom: 12px;
+        }
+
+        .toc ol {
+            padding-left: 20px;
+        }
+
+        .toc li {
+            padding: 4px 0;
+        }
+
+        .toc a {
+            color: #1a7a7a;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .photo-card {
+            background: #f8fafa;
+            border: 1.5px solid #d0e8e8;
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .photo-card:hover {
+            border-color: #1a7a7a;
+            box-shadow: 0 4px 16px rgba(13,79,79,0.12);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #0d4f4f;
+            padding: 8px 8px 4px;
+        }
+
+        .photo-download {
+            display: inline-block;
+            font-size: 10px;
+            color: #1a7a7a;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 4px 8px 8px;
+            transition: color 0.2s;
+        }
+
+        .photo-download:hover {
+            color: #0d4f4f;
+            text-decoration: underline;
+        }
+
+        @media print {
+            body { background: #fff; }
+            .section { box-shadow: none; border: 1px solid #ddd; }
+            .field-value::after { display: none; }
+            .photo-download { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>📋 Arbeitsagentur – Unternehmensdarstellung</h1>
+    <p>Dialysezentrum Heidelberg · Alle Formularinhalte zum Kopieren</p>
+    <div class="badge">Bergheimer Straße 59/61</div>
+</div>
+
+<div class="container">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+        <h3>📑 Inhaltsverzeichnis</h3>
+        <ol>
+            <li><a href="#titelbild">Titelbild und Logo</a></li>
+            <li><a href="#eckdaten">Eckdaten</a></li>
+            <li><a href="#fotos">Firmenfotos und -eindrücke</a></li>
+            <li><a href="#beschreibung">Beschreibung (Über uns)</a></li>
+            <li><a href="#vorteile">Vorteile für Mitarbeitende</a></li>
+            <li><a href="#kontakt">Kontaktdaten</a></li>
+            <li><a href="#qr">QR-Codes für Schnellbewerbung</a></li>
+        </ol>
+    </div>
+
+    <!-- ============================================================
+         1. TITELBILD UND LOGO
+         ============================================================ -->
+    <div class="section" id="titelbild">
+        <div class="section-header">
+            <span class="icon">🖼️</span>
+            <h2>Titelbild und Logo</h2>
+            <span class="form-section-label">Formularabschnitt 1</span>
+        </div>
+        <div class="section-body">
+
+            <div class="field">
+                <div class="field-label">Firmenlogo</div>
+                <div class="field-hint">Rechtsklick → „Bild speichern unter" zum Herunterladen, dann im Formular hochladen</div>
+                <div class="logo-preview">
+                    <div class="logo-card">
+                        <img src="https://www.dialyse-heidelberg.de/wp-content/uploads/2018/09/logo-dunkel.png" alt="Logo dunkel">
+                        <div class="label">Logo dunkel (für hellen Hintergrund) ✅ empfohlen</div>
+                    </div>
+                    <div class="logo-card dark-bg">
+                        <img src="https://www.dialyse-heidelberg.de/wp-content/uploads/2018/09/logo-hell.png" alt="Logo hell">
+                        <div class="label">Logo hell (für dunklen Hintergrund)</div>
+                    </div>
+                </div>
+                <a class="download-btn" href="https://www.dialyse-heidelberg.de/wp-content/uploads/2018/09/logo-dunkel.png" download="dialyse-heidelberg-logo.png">
+                    ⬇️ Logo herunterladen (dunkel)
+                </a>
+            </div>
+
+            <div class="field">
+                <div class="field-label">Titelbild (Seitenverhältnis 6:1)</div>
+                <div class="field-hint">Öffnen Sie die Datei „titelbild.html" im Browser, machen Sie einen Screenshot und laden Sie diesen hoch</div>
+                <div class="info-box">
+                    <strong>💡 Tipp:</strong> Öffnen Sie die mitgelieferte Datei <code>titelbild.html</code> im Browser. 
+                    Diese zeigt ein professionelles Banner im 6:1-Format. Machen Sie einen Screenshot (Windows: Win+Shift+S) 
+                    und laden Sie das Bild als Titelbild hoch. Empfohlene Größe: ca. 1200×200 Pixel.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================================================
+         2. ECKDATEN
+         ============================================================ -->
+    <div class="section" id="eckdaten">
+        <div class="section-header">
+            <span class="icon">🏢</span>
+            <h2>Eckdaten</h2>
+            <span class="form-section-label">Formularabschnitt 2</span>
+        </div>
+        <div class="section-body">
+
+            <div class="field">
+                <div class="field-label">Firmenname</div>
+                <div class="field-hint">Bereits vorausgefüllt im Formular</div>
+                <div class="field-value" onclick="copyText(this)">Zentrum für Nieren- und Hochdruckkrankheiten Bommer - Ehehalt - Ziegler</div>
+            </div>
+
+            <div class="field">
+                <div class="field-label">Hauptsitz</div>
+                <div class="field-value" onclick="copyText(this)">Heidelberg</div>
+            </div>
+
+            <div class="field">
+                <div class="field-label">Gründungsjahr</div>
+                <div class="field-value" onclick="copyText(this)">1971</div>
+            </div>
+
+            <div class="field">
+                <div class="field-label">Betriebsgröße</div>
+                <div class="field-hint">Dropdown-Auswahl im Formular</div>
+                <div class="field-value" onclick="copyText(this)">11–50 Mitarbeitende</div>
+            </div>
+
+            <div class="field">
+                <div class="field-label">Tätigkeitsfelder und Schlagworte (maximal 5)</div>
+                <div class="checkbox-list">
+                    <span class="checkbox-item"><span class="check">✓</span> Dialyse</span>
+                    <span class="checkbox-item"><span class="check">✓</span> Nephrologie</span>
+                    <span class="checkbox-item"><span class="check">✓</span> Gesundheitswesen</span>
+                    <span class="checkbox-item"><span class="check">✓</span> Pflege</span>
+                    <span class="checkbox-item"><span class="check">✓</span> Ambulante Versorgung</span>
+                </div>
+                <div class="info-box">
+                    <strong>📝 Zum Eintippen:</strong> Geben Sie die Schlagworte einzeln ein: Dialyse, Nephrologie, Gesundheitswesen, Pflege, Ambulante Versorgung
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="field-label">Ihre Webseiten (maximal 5)</div>
+                <div class="field-hint">Bereits vorhanden: http://www.dialysezentrum-heidelberg.de</div>
+                <div class="field-value" onclick="copyText(this)">http://www.dialyse-heidelberg.de</div>
+                <div class="info-box">
+                    <strong>💡 Hinweis:</strong> Die im Formular hinterlegte URL (dialysezentrum-heidelberg.de) und die auf der Website verwendete URL (dialyse-heidelberg.de) unterscheiden sich. Prüfen Sie, welche aktuell ist, und ergänzen Sie ggf. die zweite.
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="field-label">Ihre Social-Media-Profile (maximal 10)</div>
+                <div class="field-hint">Falls vorhanden – ansonsten leer lassen</div>
+                <div class="info-box">
+                    <strong>💡 Empfehlung:</strong> Falls das Dialysezentrum Social-Media-Profile hat (z.B. Facebook, Instagram, LinkedIn), können diese hier hinterlegt werden. Andernfalls kann dieses Feld leer bleiben.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================================================
+         3. FIRMENFOTOS
+         ============================================================ -->
+    <div class="section" id="fotos">
+        <div class="section-header">
+            <span class="icon">📸</span>
+            <h2>Firmenfotos und -eindrücke</h2>
+            <span class="form-section-label">Formularabschnitt 3</span>
+        </div>
+        <div class="section-body">
+            <div class="field">
+                <div class="field-label">Firmenfotos (maximal 10 Stück)</div>
+                <div class="field-hint">Beispielbilder – Rechtsklick → „Bild speichern unter" → im Formular hochladen. Eigene Praxisfotos sind noch besser!</div>
+
+                <div class="photo-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="photo-card">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&h=400&fit=crop&q=80" alt="Mikroskop">
+                        <div class="photo-label">🔬 Mikroskop</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&h=400&fit=crop&q=80" alt="Stethoskop">
+                        <div class="photo-label">🩺 Stethoskop</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="https://images.unsplash.com/photo-1588084475473-1056e5c1429b?w=600&h=400&fit=crop&q=80" alt="Heidelberg">
+                        <div class="photo-label">🏰 Heidelberg</div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 16px;">
+                    <strong>📷 Hinweis:</strong> Eigene Fotos der Praxis (Bergheimer Str. 59/61) hochladen – ohne Personen.<br>
+                    <strong>Formate:</strong> JPEG, PNG, GIF, WebP, TIFF · <strong>Max. Größe:</strong> 20 MB pro Bild
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         4. BESCHREIBUNG (ÜBER UNS)
+         ============================================================ -->
+    <div class="section" id="beschreibung">
+        <div class="section-header">
+            <span class="icon">📝</span>
+            <h2>Beschreibung (Über uns)</h2>
+            <span class="form-section-label">Formularabschnitt 4</span>
+        </div>
+        <div class="section-body">
+
+            <div class="field">
+                <div class="field-label">Beschreiben Sie Ihre Firma (max. 2000 Zeichen)</div>
+                <div class="field-value" onclick="copyText(this)" id="beschreibung-text">Willkommen im Dialysezentrum Heidelberg – der ältesten Dialysepraxis Heidelbergs.
+
+Seit unserer Gründung im Jahr 1971 durch Prof. Dr. Dr. h.c.(mult.) Eberhard Ritz und Prof. Dr. Jürgen Bommer in Kooperation mit der Universität Heidelberg stehen wir für höchste medizinische Qualität in der Nierenersatztherapie. Als Zentrum für Nieren- und Hochdruckkrankheiten vereinen wir über 50 Jahre Erfahrung mit einem modernen, patientenorientierten Behandlungskonzept.
+
+Unser Standort in der Bergheimer Straße 59/61 liegt mitten im Herzen Heidelbergs – bestens erreichbar mit öffentlichen Verkehrsmitteln und mit eigener Tiefgarage für unsere Mitarbeitenden.
+
+Was uns auszeichnet:
+
+Wir sind ein eingespieltes Team, das Wert auf ein wertschätzendes Miteinander legt. Bei uns sind Sie nicht nur eine Nummer – wir schätzen Ihre Arbeit und Ihr Engagement jeden Tag. Unsere Patienten begleiten wir langfristig, was tiefe, vertrauensvolle Beziehungen ermöglicht und die Arbeit besonders erfüllend macht.
+
+Familienfreundlichkeit ist uns wichtig: Keine Nachtdienste, keine Sonntagsdienste und keine Bereitschaftsdienste sorgen dafür, dass Ihr Privatleben nicht zu kurz kommt. Sie können zwischen reiner Frühschicht oder reiner Spätschicht wählen – wir passen uns Ihrem Leben an.
+
+Auch Quereinsteiger sind herzlich willkommen! Ob Pflegekraft aus einem anderen Fachbereich oder Medizinische Fachangestellte (MFA) – wir bieten Ihnen eine strukturierte Einarbeitung durch erfahrene Kolleginnen und Kollegen sowie fachliche Weiterbildung in der Dialysetechnik.
+
+Bei uns zählt der Mensch – nicht nur die Fachkraft. Wir freuen uns auf Sie!</div>
+                <div class="char-count" id="char-count-beschreibung"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================================================
+         5. VORTEILE FÜR MITARBEITENDE
+         ============================================================ -->
+    <div class="section" id="vorteile">
+        <div class="section-header">
+            <span class="icon">🎁</span>
+            <h2>Vorteile für Mitarbeitende</h2>
+            <span class="form-section-label">Formularabschnitt 5</span>
+        </div>
+        <div class="section-body">
+
+            <div class="field">
+                <div class="field-label">Aus den vorhandenen Optionen auswählen ✅</div>
+                <div class="field-hint">Diese Optionen im Formular anklicken:</div>
+                <div class="checkbox-list">
+                    <span class="checkbox-item"><span class="check">✓</span> Flexible Arbeitszeiten</span>
+                    <span class="checkbox-item"><span class="check">✓</span> Weiterbildungen</span>
+                    <span class="checkbox-item"><span class="check">✓</span> Betriebliche Altersvorsorge</span>
+                    <span class="checkbox-item"><span class="check">✓</span> ÖPNV-Ticket / Job-Ticket</span>
+                    <span class="checkbox-item"><span class="check">✓</span> Parkmöglichkeiten</span>
+                    <span class="checkbox-item"><span class="check">✓</span> Gute Verkehrsanbindung</span>
+                    <span class="checkbox-item"><span class="check">✓</span> Mentorenprogramm/Coaching</span>
+                    <span class="checkbox-item"><span class="check">✓</span> Firmenevents</span>
+                    <span class="checkbox-item"><span class="check">✓</span> Moderne technische Ausstattung</span>
+                    <span class="checkbox-item"><span class="check">✓</span> Mitgestaltungsmöglichkeiten</span>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="field-label">Firmenspezifische Vorteile (maximal 5) – eigene Benefits</div>
+                <div class="field-hint">Diese manuell eintippen:</div>
+                <div class="checkbox-list">
+                    <span class="checkbox-item custom"><span class="check">★</span> Keine Nachtdienste</span>
+                    <span class="checkbox-item custom"><span class="check">★</span> Keine Sonntagsdienste</span>
+                    <span class="checkbox-item custom"><span class="check">★</span> Keine Bereitschaftsdienste</span>
+                    <span class="checkbox-item custom"><span class="check">★</span> Tiefgarage mitten in der Stadt</span>
+                    <span class="checkbox-item custom"><span class="check">★</span> Strukturierte Dialyse-Einarbeitung</span>
+                </div>
+                <div class="info-box">
+                    <strong>📋 Zum Kopieren (einzeln eintippen):</strong><br>
+                    1. Keine Nachtdienste<br>
+                    2. Keine Sonntagsdienste<br>
+                    3. Keine Bereitschaftsdienste<br>
+                    4. Tiefgarage mitten in der Stadt<br>
+                    5. Strukturierte Dialyse-Einarbeitung
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================================================
+         6. KONTAKTDATEN
+         ============================================================ -->
+    <div class="section" id="kontakt">
+        <div class="section-header">
+            <span class="icon">📞</span>
+            <h2>Kontaktdaten</h2>
+            <span class="form-section-label">Formularabschnitt 6</span>
+        </div>
+        <div class="section-body">
+
+            <div class="field">
+                <div class="field-label">Informationen zur Kontaktmöglichkeit (max. 500 Zeichen)</div>
+                <div class="field-value" onclick="copyText(this)" id="kontakt-text">Sie möchten Teil unseres Teams werden? Wir freuen uns auf Ihre Bewerbung!
+
+Ansprechpartnerin: Frau Dr. Corinna Keßler
+
+📍 Zentrum für Nieren- und Hochdruckkrankheiten
+Bergheimer Straße 59/61
+69115 Heidelberg
+
+📞 Tel.: 0179 931 04 52
+📧 E-Mail: dialyse-heidelberg@arcor.de
+🌐 www.dialyse-heidelberg.de
+
+Auch Initiativbewerbungen und Bewerbungen per WhatsApp sind willkommen!
+Scannen Sie einfach den QR-Code auf unserem Flyer für eine Schnellbewerbung in 30 Sekunden.</div>
+                <div class="char-count" id="char-count-kontakt"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================================================
+         7. QR-CODES
+         ============================================================ -->
+    <div class="section" id="qr">
+        <div class="section-header">
+            <span class="icon">📱</span>
+            <h2>QR-Codes für Schnellbewerbung</h2>
+            <span class="form-section-label">Bonus-Material</span>
+        </div>
+        <div class="section-body">
+
+            <div class="field">
+                <div class="field-label">Bewerbungs-QR-Codes</div>
+                <div class="field-hint">Diese QR-Codes öffnen eine vorausgefüllte Nachricht – Bewerber müssen nur Name und Telefonnummer einsetzen</div>
+
+                <div class="qr-section">
+                    <div class="qr-card">
+                        <div class="qr-emoji">💬</div>
+                        <div class="qr-title">WhatsApp</div>
+                        <div id="qr-whatsapp-display"></div>
+                        <div style="font-size: 10px; color: #888; margin-top: 6px;">Nachricht an<br>0179 931 04 52</div>
+                    </div>
+                    <div class="qr-card">
+                        <div class="qr-emoji">📧</div>
+                        <div class="qr-title">E-Mail</div>
+                        <div id="qr-email-display"></div>
+                        <div style="font-size: 10px; color: #888; margin-top: 6px;">An dialyse-heidelberg<br>@arcor.de</div>
+                    </div>
+                    <div class="qr-card">
+                        <div class="qr-emoji">📱</div>
+                        <div class="qr-title">SMS</div>
+                        <div id="qr-sms-display"></div>
+                        <div style="font-size: 10px; color: #888; margin-top: 6px;">Nachricht an<br>0179 931 04 52</div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 16px;">
+                    <strong>📋 Vorausgefüllte Bewerbungsnachricht:</strong><br><br>
+                    <em>Sehr geehrte Frau Dr. Keßler,<br><br>
+                    ich heiße [Ihr Name] und hätte Interesse an Ihrer ausgeschriebenen Stelle als Pflegekraft in der Dialyse.<br><br>
+                    Ich bin erreichbar unter: [Ihre Telefonnummer]<br><br>
+                    Mit freundlichen Grüßen</em>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="field-label">QR-Codes als Bilder speichern</div>
+                <div class="info-box">
+                    <strong>💡 Anleitung:</strong> Rechtsklick auf einen QR-Code → „Bild speichern unter" → 
+                    Als Firmenfoto hochladen oder in Stellenangebote einbinden. 
+                    Alternativ: Öffnen Sie die Datei <code>qr-bewerbung.html</code> für eine druckoptimierte Version mit allen QR-Codes.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div> <!-- /container -->
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+<script>
+    // --- Copy to clipboard ---
+    function copyText(el) {
+        var text = el.innerText || el.textContent;
+        navigator.clipboard.writeText(text).then(function() {
+            el.classList.add('copied');
+            setTimeout(function() { el.classList.remove('copied'); }, 1500);
+        });
+    }
+
+    // --- Character counters ---
+    function updateCharCount(textElId, countElId, maxChars) {
+        var textEl = document.getElementById(textElId);
+        var countEl = document.getElementById(countElId);
+        if (textEl && countEl) {
+            var len = (textEl.innerText || textEl.textContent).length;
+            countEl.textContent = len + ' / ' + maxChars + ' Zeichen';
+            if (len > maxChars) {
+                countEl.classList.add('warning');
+            } else {
+                countEl.classList.remove('warning');
+            }
+        }
+    }
+
+    // --- QR Code Generation ---
+    document.addEventListener('DOMContentLoaded', function() {
+        // Character counts
+        updateCharCount('beschreibung-text', 'char-count-beschreibung', 2000);
+        updateCharCount('kontakt-text', 'char-count-kontakt', 500);
+
+        // Pre-filled message
+        var msgText = 'Sehr geehrte Frau Dr. Keßler,\n\nich heiße [Ihr Name] und hätte Interesse an Ihrer ausgeschriebenen Stelle als Pflegekraft in der Dialyse.\n\nIch bin erreichbar unter: [Ihre Telefonnummer]\n\nMit freundlichen Grüßen';
+        var phone = '491799310452';
+        var email = 'dialyse-heidelberg@arcor.de';
+
+        // WhatsApp QR
+        try {
+            var waText = encodeURIComponent(msgText);
+            var waUrl = 'https://wa.me/' + phone + '?text=' + waText;
+            var qrWA = qrcode(0, 'M');
+            qrWA.addData(waUrl);
+            qrWA.make();
+            var elWA = document.getElementById('qr-whatsapp-display');
+            if (elWA) elWA.innerHTML = qrWA.createImgTag(3, 4);
+        } catch(e) { console.log('WhatsApp QR error:', e); }
+
+        // Email QR
+        try {
+            var emailShortBody = 'Bewerbung Dialyse\n\nIch heisse [Ihr Name] und habe Interesse an der Stelle als Pflegekraft.\nErreichbar unter: [Ihre Telefonnummer]\n\nMit freundlichen Gruessen';
+            var emailUrl = 'mailto:' + email + '?subject=Bewerbung%20Pflegekraft%20Dialyse&body=' + encodeURIComponent(emailShortBody);
+            var qrEmail = qrcode(0, 'L');
+            qrEmail.addData(emailUrl);
+            qrEmail.make();
+            var elEmail = document.getElementById('qr-email-display');
+            if (elEmail) elEmail.innerHTML = qrEmail.createImgTag(3, 4);
+        } catch(e) { console.log('Email QR error:', e); }
+
+        // SMS QR
+        try {
+            var smsText = encodeURIComponent(msgText.replace(/\n/g, ' '));
+            var smsUrl = 'sms:+' + phone + '?body=' + smsText;
+            var qrSMS = qrcode(0, 'M');
+            qrSMS.addData(smsUrl);
+            qrSMS.make();
+            var elSMS = document.getElementById('qr-sms-display');
+            if (elSMS) elSMS.innerHTML = qrSMS.createImgTag(3, 4);
+        } catch(e) { console.log('SMS QR error:', e); }
+    });
+</script>
+
+</body>
+</html>
